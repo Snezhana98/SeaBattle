@@ -21,7 +21,7 @@ namespace SeaBattle
             ClearGrid();
             OnGridFieldEnemy(gridEnemy);
             OnGridFieldPlayer(gridPlayer);
-            //CreateShipsEnemy(gridEnemy);
+            ShipsEnemy(gridEnemy);
             CreateBorderEnemy();
 
             status = st;
@@ -79,33 +79,17 @@ namespace SeaBattle
                     matrixPlayer[i, j].SetBorderPlayer(i, j, gridPlayer);
                 }
         }
-        //void CreateShipsEnemy(Grid gridEnemy)
-        //{
-        //    Random random = new Random();
-        //    Ship[] four = new Ship[4];
-            
-        //    int X = random.Next(0, 9);
-        //    int Y = random.Next(0, 9);
+        void ShipsEnemy(Grid grid)
+        {
+            Random random = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                int X = random.Next(0, 10);
+                int Y = random.Next(0, 10);
+                matrixEnemy[X, Y].CreateShip();
 
-        //    four[0].CreateFour(gridEnemy, X, Y);
-        //    if (!matrixEnemy[X, Y].HaveShip)
-        //    {
-        //        for (int i = 1; i < 4; i++)
-        //        {
-
-        //            int k = random.Next(-1, 1);
-        //            int l = random.Next(-1, 1);
-        //            if (k ==0 && l == 0)
-        //            {
-        //                i--;
-        //                continue;
-        //            }
-        //            matrixEnemy[X+k, Y+l].HaveShip = true;
-        //            four[i].CreateFour(gridEnemy, X + k, Y + l);
-
-        //        }
-        //    }
-        //}
+            }
+        }
         public void LeftMouse(Field field)
         {
             field.borderEnemy.Background = null;

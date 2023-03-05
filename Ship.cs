@@ -7,21 +7,14 @@ namespace SeaBattle
 {
     public class Ship
     {
-        Viewbox viewbox;
-        TextBlock OneFieldShip;
-        public Ship()
+        List<Paluba> ship;
+        public Ship(int count)
         {
+            for (int i = 0; i < count; i++)
+            {
+                ship[i] = new Paluba();
+            }
+        }
 
-        }
-        public void CreateFour(Grid grid, int x, int y)
-        {
-            OneFieldShip = new TextBlock();
-            OneFieldShip.Text = "🚢";
-            viewbox = new Viewbox();
-            viewbox.Child = OneFieldShip;
-            grid.Children.Add(viewbox);
-            Grid.SetColumn(viewbox, x);
-            Grid.SetRow(viewbox, y);
-        }
     }
 }

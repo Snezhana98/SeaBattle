@@ -9,12 +9,12 @@ namespace SeaBattle
 {
     class Field
     {
-        public bool HaveShip = false;
+
         public Border borderEnemy;
         public Border borderPlayer;
         public Field()
         {
-
+            
         }
         public void SetBorderEnemy(int i, int j, Grid grid)
         {
@@ -42,6 +42,10 @@ namespace SeaBattle
             grid.Children.Add(borderPlayer);
             Grid.SetColumn(borderPlayer, x);
             Grid.SetRow(borderPlayer, y);
+        }
+        public void CreateShip()
+        {
+            Ship ship1 = new Ship(4);
         }
     }
 }
