@@ -1,0 +1,22 @@
+﻿<Window x:Class="SeaBattle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SeaBattle"
+        mc:Ignorable="d"
+        Title="Морской бой" Height="700" Width="1200" WindowStartupLocation="CenterScreen">
+    <DockPanel Background="AliceBlue">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="20">
+            <Button Content="Играть" FontSize="20" Margin="20,0,20,0" Background="#FF3FF3F3" Padding="10" Click="OnClickPlay"></Button>
+            <Button Content="Расставить свои корабли" FontSize="20" Margin="20,0,20,0" Background="#FF3FF3F3" Padding="10" Click="OnClickShips"></Button>
+            <TextBlock x:Name="Status" FontSize="20" Margin="20,0,20,0" Padding="10"></TextBlock>
+        </StackPanel>
+        <Grid x:Name="GridComp" DockPanel.Dock="Left" Background="#FFB4C7C7" Width="500" Height="500" Margin="30" MouseUp="LeftMouse" />
+        <Grid x:Name="GridPlayer" DockPanel.Dock="Right" Background="#FFB4C7C7" Width="500" Height="500" Margin="30"/>
+        
+    </DockPanel>
+    
+</Window>
+
+    
