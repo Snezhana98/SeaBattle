@@ -13,9 +13,14 @@ namespace SeaBattle
         {
 
         }
-        void CreateShip (int x, int y)
+        public void CreateShip (int x, int y, Grid grid)
         {
 
+                Paluba paluba = new Paluba();
+                paluba.x = x;
+                paluba.y = y;
+                paluba.CreatePaluba(grid);
+           
         }
     }
 }

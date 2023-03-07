@@ -12,6 +12,7 @@ namespace SeaBattle
 
         public Border borderEnemy;
         public Border borderPlayer;
+        public bool HaveShip = false;
         bool empty = true;
         public Field()
         {
@@ -44,9 +45,10 @@ namespace SeaBattle
             Grid.SetColumn(borderPlayer, x);
             Grid.SetRow(borderPlayer, y);
         }
-        public void CreateShip(int x, int y)
-        {
-            
+        public void ShipsEnemy(Grid grid, int X, int Y)
+        { 
+                Ship ship = new Ship();
+                ship.CreateShip(X, Y, grid);            
         }
     }
 }

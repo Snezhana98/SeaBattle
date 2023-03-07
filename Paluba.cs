@@ -9,18 +9,23 @@ namespace SeaBattle
     {
         Viewbox viewbox;
         TextBlock OneFieldShip;
-        int x, y;
-        bool hit = false;
-        public Paluba(/*Grid grid, int x, int y*/)
+        public int x, y;
+        public bool hit = false;
+        public Paluba()
+        {
+
+            
+
+        }
+        public void CreatePaluba(Grid grid)
         {
             OneFieldShip = new TextBlock();
             OneFieldShip.Text = "🚢";
             viewbox = new Viewbox();
             viewbox.Child = OneFieldShip;
-            //grid.Children.Add(viewbox);
-            //Grid.SetColumn(viewbox, x);
-            //Grid.SetRow(viewbox, y);
-
+            grid.Children.Add(viewbox);
+            Grid.SetColumn(viewbox, x);
+            Grid.SetRow(viewbox, y);
         }
 
     }

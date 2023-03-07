@@ -21,8 +21,9 @@ namespace SeaBattle
             ClearGrid();
             OnGridFieldEnemy(gridEnemy);
             OnGridFieldPlayer(gridPlayer);
-            ShipsEnemy(gridEnemy);
+            CreteShipsEnemy();
             CreateBorderEnemy();
+
 
             status = st;
             status.Text = "Расставьте свои корабли";
@@ -77,19 +78,44 @@ namespace SeaBattle
                 {
                     matrixEnemy[i, j].SetBorderEnemy(i, j, gridEnemy);
                     matrixPlayer[i, j].SetBorderPlayer(i, j, gridPlayer);
+                    
                 }
         }
-        void ShipsEnemy(Grid grid)
+        void CreteShipsEnemy()
         {
             Random random = new Random();
             for (int i = 0; i < 10; i++)
             {
-                int X = random.Next(0, 10);
-                int Y = random.Next(0, 10);
-                matrixEnemy[X, Y].CreateShip(X, Y);
+
+                int X = random.Next(0, 9);
+                int Y = random.Next(0, 9);
+                if (!matrixEnemy[X, Y].HaveShip)
+                {
+                    matrixEnemy[X, Y].HaveShip = true;
+                    matrixEnemy[X, Y].ShipsEnemy(gridEnemy, X, Y);
+                }
+                else i--;
+
+                //for (int j = 0; j < 3; j++)
+                //{
+                //    Random random1 = new Random();
+                //    int K = random1.Next(-1, 1);
+                //    int L = random1.Next(-1, 1);
+                //    if (K != 0 && L != 0)
+                //    {
+
+                //        if (X == 0 /*|| Y == 0 || X == 9 || Y == 9*/)
+                //        {
+
+                //        }                           
+                //        matrixEnemy[X + K, Y + L].ShipsEnemy(gridEnemy, X + K, Y + L);
+                //    }
+                //    else j--;
+                //}
 
             }
         }
+
         public void LeftMouse(Field field)
         {
             field.borderEnemy.Background = null;
