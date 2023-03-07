@@ -9,7 +9,8 @@ namespace SeaBattle
     {
         Viewbox viewbox;
         TextBlock OneFieldShip;
-
+        int x, y;
+        bool hit = false;
         public Paluba(/*Grid grid, int x, int y*/)
         {
             OneFieldShip = new TextBlock();

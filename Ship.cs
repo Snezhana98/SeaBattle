@@ -7,14 +7,15 @@ namespace SeaBattle
 {
     public class Ship
     {
-        List<Paluba> ship;
-        public Ship(int count)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                ship[i] = new Paluba();
-            }
-        }
+        bool killed = false;
 
+        public Ship()
+        {
+
+        }
+        void CreateShip (int x, int y)
+        {
+
+        }
     }
 }

@@ -86,7 +86,7 @@ namespace SeaBattle
             {
                 int X = random.Next(0, 10);
                 int Y = random.Next(0, 10);
-                matrixEnemy[X, Y].CreateShip();
+                matrixEnemy[X, Y].CreateShip(X, Y);
 
             }
         }
